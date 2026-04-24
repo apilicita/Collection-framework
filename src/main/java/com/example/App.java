@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class App {
@@ -56,8 +57,38 @@ public class App {
 		//personas.add(persona2);
 		//personas.add(persona3);
 		//personas.add(persona4);
-	System.out.println(personas);
+
 		//personas = Arrays.asList(persona1,persona2,persona3,persona4);
+	System.out.println("-----listado original de personsa---");
+	System.out.println(personas);
+	Iterator<Persona> it = personas.iterator();
+	
+	while (it.hasNext()) {
+	      if (it.next().genero().equals(Genero.HOMBRE)) {
+		     it.remove();
+	      }
+	}
+	
+	System.out.println("-----listado resultante despues eliminar genero persona---");
+	System.out.println(personas);
+	
+	//Ejercicio 1
+	//Utilizar un iterarador ,eliminar el listado de personas. Aquellas que sea de genero hombres y el nombre tenga 6 caracteres
+	//Hacer un commit , y despues comentar o eliminar el uso del iterador anterior, para tener la lista de personas original
+	
+	/*System.out.println("-----listado resultante despues eliminar genero persona y nombre 6 caracteres---");
+	
+   Iterator<Persona> it2 = personas.iterator();
+	
+	while (it2.hasNext()) {
+	      if (it2.next().genero().equals(Genero.HOMBRE) &&) {
+		     it2.remove();
+	      }
+	}*/
+	
+	
+	
+	
 	}
 	
 }

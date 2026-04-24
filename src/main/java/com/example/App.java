@@ -90,12 +90,12 @@ public class App {
 
 	System.out.println(personas);
 
-	for (var p: personas)
-	{
-	    if (p.genero().equals(Genero.MUJER)) {
-	    	personas.remove(p);
-	    }		
-	}
+	//for (var p: personas)
+	//{
+	//    if (p.genero().equals(Genero.MUJER)) {
+	 //   	personas.remove(p);
+	  //  }		
+	//}
 	
 	
 	}

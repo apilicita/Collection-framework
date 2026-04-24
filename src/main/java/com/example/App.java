@@ -18,16 +18,44 @@ public class App {
 				
 		List<Persona> personas = null;
 		
-		Persona persona1 = Persona.builder()
+		var persona1 = Persona.builder()
 				.nombre("Duglas")
 				.primerApellido("Taydron")
 				.segundoApellido("Gonzalez")
 				.fechaNacimiento(LocalDate.of(2001, Month.AUGUST, 15))
 				.genero(Genero.HOMBRE)
 				.build();
+
+		var persona2 = Persona.builder()
+				.nombre("Alex")
+				.primerApellido("Pilicita")
+				.segundoApellido("Changoluisa")
+				.fechaNacimiento(LocalDate.of(1987, Month.AUGUST, 25))
+				.genero(Genero.HOMBRE)
+				.build();
+		
+		var persona3 = Persona.builder()
+				.nombre("Carolina")
+				.primerApellido("Garzon")
+				.segundoApellido("Perez")
+				.fechaNacimiento(LocalDate.of(1993, Month.AUGUST, 5))
+				.genero(Genero.MUJER)
+				.build();
+
+		var persona4 = Persona.builder()
+				.nombre("Jeronimo")
+				.primerApellido("Perez")
+				.segundoApellido("Lopez")
+				.fechaNacimiento(LocalDate.of(1993, Month.MAY, 22))
+				.genero(Genero.HOMBRE)
+				.build();
 		
 		personas.add(persona1);
-		
+		personas.add(persona2);
+		personas.add(persona3);
+		personas.add(persona4);
+	
+		personas = Arrays.asList(persona1,persona2,persona3,persona4);
 	}
 	
 }

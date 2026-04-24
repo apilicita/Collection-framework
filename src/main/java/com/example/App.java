@@ -59,7 +59,8 @@ public class App {
 		//personas.add(persona4);
 
 		//personas = Arrays.asList(persona1,persona2,persona3,persona4);
-	System.out.println("-----listado original de personsa---");
+	/*
+	 System.out.println("-----listado original de personsa---");
 	System.out.println(personas);
 	Iterator<Persona> it = personas.iterator();
 	
@@ -67,25 +68,27 @@ public class App {
 	      if (it.next().genero().equals(Genero.HOMBRE)) {
 		     it.remove();
 	      }
-	}
+	}*/
 	
-	System.out.println("-----listado resultante despues eliminar genero persona---");
-	System.out.println(personas);
+	//System.out.println("-----listado resultante despues eliminar genero persona---");
+	//System.out.println(personas);
 	
 	//Ejercicio 1
 	//Utilizar un iterarador ,eliminar el listado de personas. Aquellas que sea de genero hombres y el nombre tenga 6 caracteres
 	//Hacer un commit , y despues comentar o eliminar el uso del iterador anterior, para tener la lista de personas original
 	
-	/*System.out.println("-----listado resultante despues eliminar genero persona y nombre 6 caracteres---");
+	System.out.println("-----listado resultante despues eliminar genero persona y nombre 6 caracteres---");
 	
-   Iterator<Persona> it2 = personas.iterator();
-	
+	Iterator<Persona> it2 = personas.iterator();
+
 	while (it2.hasNext()) {
-	      if (it2.next().genero().equals(Genero.HOMBRE) &&) {
-		     it2.remove();
-	      }
-	}*/
-	
+	    var p = it2.next(); 
+	    if (p.genero().equals(Genero.HOMBRE) && p.nombre().length() == 6) {
+	        it2.remove();
+	    }
+	}
+
+	System.out.println(personas);
 	
 	
 	

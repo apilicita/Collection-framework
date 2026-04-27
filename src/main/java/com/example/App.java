@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.OptionalDouble;
@@ -152,9 +153,12 @@ public class App {
 	 * ni eliminar, ni modificar
 	 * */
 	
-	List<String> listaInmutable = List.of("Jeronimo","Duglas","Carolina");
+	List<String> nombres = List.of("Jeronimo","Duglas","Carolina");
+	Collections.sort(nombres);
+	System.out.println(nombres);
 	
 	
+	Collections.sort(personas);
 	}
 
 }

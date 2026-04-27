@@ -9,6 +9,8 @@ public record Persona(
  String primerApellido,
  String segundoApellido,
  LocalDate fechaNacimiento,
- Genero genero) {
+ Genero genero,
+ double salario
+ ) {
 	
 }

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class App {
 
@@ -27,6 +29,7 @@ public class App {
 				.segundoApellido("Gonzalez")
 				.fechaNacimiento(LocalDate.of(2001, Month.AUGUST, 15))
 				.genero(Genero.HOMBRE)
+				.salario(3500.40)
 				.build());
 
 		personas.add(Persona.builder()
@@ -35,6 +38,7 @@ public class App {
 				.segundoApellido("Changoluisa")
 				.fechaNacimiento(LocalDate.of(1987, Month.AUGUST, 25))
 				.genero(Genero.HOMBRE)
+				.salario(3600.45)
 				.build());
 		
 		personas.add( Persona.builder()
@@ -43,6 +47,7 @@ public class App {
 				.segundoApellido("Perez")
 				.fechaNacimiento(LocalDate.of(1993, Month.AUGUST, 5))
 				.genero(Genero.MUJER)
+				.salario(3650.30)
 				.build());
 
 		personas.add(Persona.builder()
@@ -51,6 +56,7 @@ public class App {
 				.segundoApellido("Lopez")
 				.fechaNacimiento(LocalDate.of(1993, Month.MAY, 22))
 				.genero(Genero.HOMBRE)
+				.salario(4300.45)
 				.build());
 		
 		//personas.add(persona1);
@@ -97,6 +103,21 @@ public class App {
 	  //  }		
 	//}
 	
+	/*
+	 * OPERACIONES DE AGREGADO PARA RECORRER LAS COLECCIONES
+	 * 
+	 * https://docs.oracle.com/javase/tutorial/
+	 *  
+
+     Calcular el salario promedio de las personas del genero mujer
+	 Las operaciones de agregado implican convertir la coleccion en un flujo(stream)
+	 de elementos que a circular por una tuberia imaginaria o pipeline. Por tuberia o
+	 Pipeline se entiende uan secuenta de metodos de clase Stream es decir una secuencia de operaciones de 
+	agreado */
+	
+	Stream<Persona> flujoDePersona = personas.stream();
+	
+	personas.stream().filter(new Filtro());
 	
 	}
 	

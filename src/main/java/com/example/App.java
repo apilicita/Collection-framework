@@ -127,6 +127,10 @@ public class App {
 	}
 	});
 	
+	//Landa
+	personas.stream().filter((Persona p) -> p.genero().equals(Genero.MUJER));
+
+	
 	}
 	
 }

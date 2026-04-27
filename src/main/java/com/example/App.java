@@ -115,9 +115,17 @@ public class App {
 	 Pipeline se entiende uan secuenta de metodos de clase Stream es decir una secuencia de operaciones de 
 	agreado */
 	
-	Stream<Persona> flujoDePersona = personas.stream();
+	//Stream<Persona> flujoDePersona = personas.stream();
 	
-	personas.stream().filter(new Filtro());
+	//personas.stream().filter(new Filtro());
+	
+	personas.stream().filter(new Predicate<Persona>() {
+	
+	@Override
+	public boolean test(Persona p) {
+		return p.genero().equals(Genero.MUJER);
+	}
+	});
 	
 	}
 	

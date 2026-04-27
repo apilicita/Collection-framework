@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -130,12 +131,30 @@ public class App {
 	//Landa
 	
 	int x=7;
-	personas.stream().filter(p -> {
-	int y=2;
-	y += x;
-	return p.genero().equals(Genero.MUJER);
-	});
+	OptionalDouble optionalDeSalarioPromedio= personas.stream().filter(
+	p -> p.genero().equals(Genero.MUJER))
+	.mapToDouble(p -> p.salario())
+	.average();
 	
-}
+	double SalarioMedio= 0.00;
+	
+	if (optionalDeSalarioPromedio.isPresent()) {
+		SalarioMedio = optionalDeSalarioPromedio.getAsDouble();
+	}
+	
+	double salarioPromedio = personas.stream()
+			.filter(p -> p.genero().equals(Genero.MUJER))
+			.mapToDouble(p -> p.salario())
+            .average().orElse(0);	
+
+	/*
+	 * crear una coleccion inmutable es decir que no se pueda modificar, ni agregar
+	 * ni eliminar, ni modificar
+	 * */
+	
+	List<String> listaInmutable = List.of("Jeronimo","Duglas","Carolina");
+	
+	
+	}
 
 }

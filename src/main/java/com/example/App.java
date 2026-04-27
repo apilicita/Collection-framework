@@ -128,9 +128,14 @@ public class App {
 	});
 	
 	//Landa
-	personas.stream().filter((Persona p) -> p.genero().equals(Genero.MUJER));
+	
+	int x=7;
+	personas.stream().filter(p -> {
+	int y=2;
+	y += x;
+	return p.genero().equals(Genero.MUJER);
+	});
+	
+}
 
-	
-	}
-	
 }

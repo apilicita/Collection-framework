@@ -5,6 +5,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.OptionalDouble;
@@ -171,7 +172,36 @@ public class App {
     personas.stream().forEach(persona -> System.out.println(persona));
     
     
-	
+    /*
+     * Supongamos que el Record Persona va ser utilizado en otro Departamento o en otra 
+     * aplicacion donde no les interesa el orden Natural implementado 
+     * (por ejemplo ordenar por salario de menor  a mayor) */
+    
+    //nota : persona1.salario() --> esto devuelve un double primitivo, por eso utilizamos   Double.valueOf
+    //convierte de double primitivo a Double Objeto y hacemo podemos utilizar el comparte To
+    //el metodo sort pedi dos parametros la lista y el comparator : en ese caso entre en el metodo hemos visto era el comparteTo
+    Collections.sort(personas,
+    		        (persona1,persona2) ->
+                     Double.valueOf(persona1.salario()).compareTo(persona2.salario()));
+
+    System.out.println("-----Listado de personas ordenado por salario de menor a mayor-----------------------------------------------------------------------");
+    //no le pasamo la lambada con el metodo compareTo, sino se le pasa directamente el system.out.
+    personas.forEach(System.out::println);
+    
+    //A continuacion otra variante de ordenar por el salario
+    //comparingDouble es una funcion que te pida el objeto Persona y lo que quieres extraer en este caso el salario
+    //super <T> o super <Persona> --> pide un objeto en este caso Persona
+    System.out.println("------Listado de personas ordenado por salario de menor a mayor utilizando metodos de la propia interfaz Comparator--------------------");
+    Collections.sort(personas, Comparator.comparingDouble(Persona::salario));
+    personas.forEach(System.out::println);
+    
+    /*Respetando el Natural Ordering, ordenar la lista de personas por el salario de mayor a 
+     * a menor*/
+    //System.out.println("Listado de personas ordenado por salario de mayor a menor con Revers order");   
+   System.out.println("---------------Listado de personas ordenado por salario de mayor a menor-----------------------------------------------------------------");
+   Collections.sort(personas, Comparator.comparingDouble(Persona::salario).reversed());
+   personas.forEach(System.out::println);
+   
 	}
 
 }

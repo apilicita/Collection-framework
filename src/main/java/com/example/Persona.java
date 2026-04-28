@@ -16,13 +16,20 @@ public record Persona(
 	//Compara el primer apellido con el siguiente de la otra persona
 	public int compareTo(Persona persona) {
 	 //resultado de la comparacion por el primer apellido, de dos personas de la lista de personas	
+	//Para que el orden sea lexicograficamente de la Z a la A, hay que ubicar primero el objeto que se recibe como parametro	
 		
-	int cmpPrimerApellido = this.primerApellido.
-			                compareTo(persona.primerApellido());	
-	int cmpSegundoApellido = this.segundoApellido.
-			                 compareTo(persona.segundoApellido());
-	int cmpNombre = this.nombre.
-			                compareTo(persona.nombre());
+		int cmpPrimerApellido = persona.primerApellido().
+				compareTo(this.primerApellido);
+		int cmpSegundoApellido = persona.segundoApellido().compareTo(this.segundoApellido); 
+        int cmpNombre = persona.nombre().compareTo(this.nombre);
+      
+    //Esto para que el orden sea de la A la Z   
+	//int cmpPrimerApellido = this.primerApellido.
+	//		                compareTo(persona.primerApellido());	
+	//int cmpSegundoApellido = this.segundoApellido.
+	//		                 compareTo(persona.segundoApellido());
+	//int cmpNombre = this.nombre.
+	//		                compareTo(persona.nombre());
 
 	//iguales es o , !=0 son distintos
 	//no son iguales los primeros apellidos, da igual devuelve el apellido, si son iguales paso al siguiente apellido(Segundo Apellido)

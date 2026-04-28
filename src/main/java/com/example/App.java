@@ -94,7 +94,7 @@ public class App {
 	//Utilizar un iterarador ,eliminar el listado de personas. Aquellas que sea de genero hombres y el nombre tenga 6 caracteres
 	//Hacer un commit , y despues comentar o eliminar el uso del iterador anterior, para tener la lista de personas original
 	
-	System.out.println("-----listado resultante despues eliminar genero persona y nombre 6 caracteres---");
+	/*System.out.println("-----listado resultante despues eliminar genero persona y nombre 6 caracteres---");
 	
 	Iterator<Persona> it2 = personas.iterator();
 
@@ -103,9 +103,9 @@ public class App {
 	    if (p.genero().equals(Genero.HOMBRE) && p.nombre().length() == 6) {
 	        it2.remove();
 	    }
-	}
+	}*/
 
-	System.out.println(personas);
+	//System.out.println(personas);
 
 	//for (var p: personas)
 	//{
@@ -171,58 +171,6 @@ public class App {
     personas.stream().forEach(persona -> System.out.println(persona));
     
     
-    /*
-     * Ejemplo de comparacion
-	   Persona p1 = Persona.builder()
-               .nombre("Jeronimo")
-               .primerApellido("Arenal")
-               .segundoApellido("Gomez")
-               .fechaNacimiento(LocalDate.of(1990, 5, 15))
-               .genero(Genero.HOMBRE)
-               .salario(2500.0)
-               .build();
-
-       Persona p2 = Persona.builder()
-               .nombre("Francisco")
-               .primerApellido("Arenal")
-               .segundoApellido("Gomez")
-               .fechaNacimiento(LocalDate.of(1985, 3, 22))
-               .genero(Genero.HOMBRE)
-               .salario(3000.0)
-               .build();
-
-    
-       List<Persona> personas2 = new ArrayList<>(Arrays.asList(p1, p2));
-       
-       System.out.println("=== Antes de ordenar ===");
-       personas2.forEach(p -> System.out.println(p.nombre() + " " + p.primerApellido() + " " + p.segundoApellido()));
-
-       List<Persona> ordenadas = personas2.stream()
-               .sorted()
-               .toList();
-
-       System.out.println("\n=== Después de ordenar ===");
-       ordenadas.forEach(p -> System.out.println(p.nombre() + " " + p.primerApellido() + " " + p.segundoApellido()));
-
-       System.out.println("\n=== Comparación directa ===");
-       
-    int resultado = p1.compareTo(p2);
-    if (resultado < 0) {
-        System.out.println(p1.nombre() + " va ANTES que " + p2.nombre());
-    } else if (resultado > 0) {
-        System.out.println(p1.nombre() + " va DESPUÉS que " + p2.nombre());
-    } else {
-        System.out.println("Son iguales en el orden");
-    }
-    
-    System.out.println("\n=== Comparación de igualdad ===");
-    if (p1.compareTo(p2) == 0) {
-        System.out.println(p1.nombre() + " y " + p2.nombre() + " son IGUALES en el orden");
-    } else {
-        System.out.println(p1.nombre() + " y " + p2.nombre() + " son DISTINTOS en el orden");
-    }
-	//Collections.sort(personas);
-	*/
 	
 	}
 

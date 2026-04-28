@@ -46,7 +46,7 @@ public class App {
 		personas.add( Persona.builder()
 				.nombre("Carolina")
 				.primerApellido("Garzon")
-				.segundoApellido("Perez")
+				.segundoApellido("Becerra")
 				.fechaNacimiento(LocalDate.of(1993, Month.AUGUST, 5))
 				.genero(Genero.MUJER)
 				.salario(3650.30)
@@ -59,6 +59,15 @@ public class App {
 				.fechaNacimiento(LocalDate.of(1993, Month.MAY, 22))
 				.genero(Genero.HOMBRE)
 				.salario(4300.45)
+				.build());
+		
+		personas.add(Persona.builder()
+				.nombre("Maria")
+				.primerApellido("Garzon")
+				.segundoApellido("Becerra")
+				.fechaNacimiento(LocalDate.of(1991, Month.DECEMBER, 12))
+				.genero(Genero.MUJER)
+				.salario(2500.45)
 				.build());
 		
 		//personas.add(persona1);
@@ -153,12 +162,68 @@ public class App {
 	 * ni eliminar, ni modificar
 	 * */
 	
-	List<String> nombres = List.of("Jeronimo","Duglas","Carolina");
-	Collections.sort(nombres);
-	System.out.println(nombres);
+	//List<String> nombres = List.of("Jeronimo","Duglas","Carolina");
+	//Collections.sort(nombres);
+    //System.out.println(nombres);
 	
-	
+    //Mostrar la lista de personas resultante
 	Collections.sort(personas);
+    personas.stream().forEach(persona -> System.out.println(persona));
+    
+    
+    /*
+     * Ejemplo de comparacion
+	   Persona p1 = Persona.builder()
+               .nombre("Jeronimo")
+               .primerApellido("Arenal")
+               .segundoApellido("Gomez")
+               .fechaNacimiento(LocalDate.of(1990, 5, 15))
+               .genero(Genero.HOMBRE)
+               .salario(2500.0)
+               .build();
+
+       Persona p2 = Persona.builder()
+               .nombre("Francisco")
+               .primerApellido("Arenal")
+               .segundoApellido("Gomez")
+               .fechaNacimiento(LocalDate.of(1985, 3, 22))
+               .genero(Genero.HOMBRE)
+               .salario(3000.0)
+               .build();
+
+    
+       List<Persona> personas2 = new ArrayList<>(Arrays.asList(p1, p2));
+       
+       System.out.println("=== Antes de ordenar ===");
+       personas2.forEach(p -> System.out.println(p.nombre() + " " + p.primerApellido() + " " + p.segundoApellido()));
+
+       List<Persona> ordenadas = personas2.stream()
+               .sorted()
+               .toList();
+
+       System.out.println("\n=== Después de ordenar ===");
+       ordenadas.forEach(p -> System.out.println(p.nombre() + " " + p.primerApellido() + " " + p.segundoApellido()));
+
+       System.out.println("\n=== Comparación directa ===");
+       
+    int resultado = p1.compareTo(p2);
+    if (resultado < 0) {
+        System.out.println(p1.nombre() + " va ANTES que " + p2.nombre());
+    } else if (resultado > 0) {
+        System.out.println(p1.nombre() + " va DESPUÉS que " + p2.nombre());
+    } else {
+        System.out.println("Son iguales en el orden");
+    }
+    
+    System.out.println("\n=== Comparación de igualdad ===");
+    if (p1.compareTo(p2) == 0) {
+        System.out.println(p1.nombre() + " y " + p2.nombre() + " son IGUALES en el orden");
+    } else {
+        System.out.println(p1.nombre() + " y " + p2.nombre() + " son DISTINTOS en el orden");
+    }
+	//Collections.sort(personas);
+	*/
+	
 	}
 
 }
